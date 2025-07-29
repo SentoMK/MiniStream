@@ -5,11 +5,11 @@ project(MiniStream)
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(SDL3 REQUIRED
-    PATHS "D:/sentomk/Dev/Mini/thirdparty/SDL3"
+    PATHS "F:/code/Dev/MiniStream/thirdparty/SDL3"
     NO_DEFAULT_PATH
 )
 
-set(SDL3_DLL "D:/sentomk/Dev/Mini/thirdparty/SDL3/lib/x64/SDL3.dll")
+set(SDL3_DLL "F:/code/Dev/MiniStream/thirdparty/SDL3/bin/SDL3.dll")
 
 include_directories(${SDL3_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/include)
 

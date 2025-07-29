@@ -1,0 +1,18 @@
+# 忽略所有内容
+*
+
+# 但不忽略.gitignore 文件本身
+!.gitignore
+
+# 允许 CMakeLists.txt
+!CMakeLists.txt
+
+# 允许特定文件夹
+!include/
+!src/
+!thirdparty/
+
+# 允许上述文件夹中的所有内容
+!include/**
+!src/**
+!thirdparty/**

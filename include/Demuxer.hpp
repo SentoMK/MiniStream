@@ -1,5 +1,6 @@
 #pragma once
 
-class Demuxer {
+class Demuxer
+{
 
 };
