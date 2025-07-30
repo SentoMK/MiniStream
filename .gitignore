@@ -8,7 +8,7 @@
 !CMakeLists.txt
 
 # 允许特定文件夹或文件
-!modules/
+!include/
 !app/
 !thirdparty/
 !scripts/
@@ -16,7 +16,7 @@
 !README.md
 
 # 允许上述文件夹中的所有内容
-!modules/**
+!include/**
 !app/**
 !thirdparty/**
 !scripts/**
