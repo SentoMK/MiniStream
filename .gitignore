@@ -11,11 +11,13 @@
 !include/
 !src/
 !thirdparty/
+!scripts/
 
 # 允许上述文件夹中的所有内容
 !include/**
 !src/**
 !thirdparty/**
+!scripts/**
 
 # 忽略三方依赖的构建产物
 thirdparty/SDL3-src/build/
