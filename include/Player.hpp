@@ -9,8 +9,8 @@ class Player {
 public:
   Player()  = default;
   ~Player() = default;
-    // 初始化 SDL 窗口和渲染器
-    bool init(const std::string &title, int w, int h) {
+  // 初始化 SDL 窗口和渲染器
+  bool init(const std::string &title, int w, int h) {
     if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO)) {
       std::cerr << "SDL_Init Error: " << SDL_GetError() << '\n';
       return false;
