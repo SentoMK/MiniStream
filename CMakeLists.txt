@@ -1,28 +1,25 @@
-cmake_minimum_required(VERSION 3.30)
-
-project(MiniStream)
+cmake_minimum_required(VERSION 3.20)
+project(MiniStream LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(SDL3 REQUIRED
-    PATHS "F:/code/Dev/MiniStream/thirdparty/SDL3"
-    NO_DEFAULT_PATH
-)
+# 指定 SDL3 安装路径
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/SDL3")
 
-set(SDL3_DLL "F:/code/Dev/MiniStream/thirdparty/SDL3/bin/SDL3.dll")
+# 找 SDL3
+find_package(SDL3 REQUIRED CONFIG)
 
-include_directories(${SDL3_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR}/include)
-
+# 声明可执行文件
 add_executable(MiniStream
     src/main.cpp
 )
 
-target_link_libraries(MiniStream
-    ${SDL3_LIBRARIES}
+# 包含头文件路径
+target_include_directories(MiniStream PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/SDL3/include
 )
 
-add_custom_command(TARGET MiniStream POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    "${SDL3_DLL}"
-    $<TARGET_FILE_DIR:MiniStream>
-)
+# 链接 SDL3
+target_link_libraries(MiniStream PRIVATE SDL3::SDL3)

@@ -16,3 +16,7 @@
 !include/**
 !src/**
 !thirdparty/**
+
+# 忽略三方依赖的构建产物
+thirdparty/SDL3-src/build/
+thirdparty/SDL3/
