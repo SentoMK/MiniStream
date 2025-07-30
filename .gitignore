@@ -7,17 +7,21 @@
 # 允许 CMakeLists.txt
 !CMakeLists.txt
 
-# 允许特定文件夹
-!include/
-!src/
+# 允许特定文件夹或文件
+!modules/
+!app/
 !thirdparty/
 !scripts/
+!docs/
+!README.md
 
 # 允许上述文件夹中的所有内容
-!include/**
-!src/**
+!modules/**
+!app/**
 !thirdparty/**
 !scripts/**
+!docs/**
+
 
 # 忽略三方依赖的构建产物
 thirdparty/SDL3-src/build/

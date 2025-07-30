@@ -7,7 +7,7 @@
 
 class Player {
 public:
-  Player()  = default;
+  Player() = default;
   ~Player() = default;
   // 初始化 SDL 窗口和渲染器
   bool init(const std::string &title, int w, int h) {
@@ -17,11 +17,10 @@ public:
     }
 
     // SDL3: SDL_CreateWindow(title, width, height, flags)
-    window = SDL_CreateWindow(title.c_str(),
-                              w,
-                              h,
-                              0 // 普通可见窗口，若要全屏用 SDL_WINDOW_FULLSCREEN
-    );
+    window =
+        SDL_CreateWindow(title.c_str(), w, h,
+                         0 // 普通可见窗口，若要全屏用 SDL_WINDOW_FULLSCREEN
+        );
     if (!window) {
       std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << '\n';
       cleanup();
@@ -44,7 +43,7 @@ public:
   // 主循环：处理退出事件并清屏
   void run() {
     SDL_Event e;
-    bool      running = true;
+    bool running = true;
     while (running) {
       while (SDL_PollEvent(&e)) {
         if (e.type == SDL_EVENT_QUIT) {
@@ -71,6 +70,6 @@ public:
   }
 
 private:
-  SDL_Window   *window   = nullptr;
+  SDL_Window *window = nullptr;
   SDL_Renderer *renderer = nullptr;
 };
